@@ -5,7 +5,7 @@ var mongoose = require('mongoose');
 var Post = require('./models/post');
 var AdvancedMaths = require('./modules/advanced-maths');
 
-app.set('view engine' , 'ejs');
+app.set('view engine' , 'ejs'); // comment
 
 app.use(express.static('public'));
 
