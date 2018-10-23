@@ -1,3 +1,4 @@
+# This is the vagrantfile
 required_plugins = %w( vagrant-hostsupdater )
 required_plugins.each do |plugin|
     exec "vagrant plugin install #{plugin};vagrant #{ARGV.join(" ")}" unless Vagrant.has_plugin? plugin || ARGV[0] == 'plugin'
@@ -9,7 +10,7 @@ Vagrant.configure("2") do |config|
     app.vm.box = "ubuntu/xenial64"
     app.vm.network "private_network", ip: "192.168.10.100"
     app.hostsupdater.aliases = ["development.local"]
-    
+
     # Synced app folder
     app.vm.synced_folder "app", "/app"
 
